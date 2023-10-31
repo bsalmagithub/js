@@ -49,3 +49,42 @@ let stringNumber= String(somenNumber)
 console.log(stringNumber);
 
 //typeof => string
+
+
+// *******************  Operations ***************************
+
+let value=3
+let negValue= -value
+//console.log(negValue)  value -3
+
+/*basic operations
+console.log(2 + 2);  4
+console.log( 2 - 2)     0
+console.log( 2 * 2)     4
+console.log( 2 ** 3)    8
+console.log( 2 / 3)     0.66
+console.log( 2 % 3)     2
+*/
+
+let str1= "Hello"
+let str2= " Salma"
+let str3= str1 + str2
+// console.log(str3);  Hello Salma
+
+/*
+console.log("1" + 2);//12
+console.log(1 + "2");//12
+console.log("1" + 2 + 2);//122
+console.log(1 + 2 + "2");//32
+*/
+
+console.log(true); //true
+console.log(+true);//1
+console.log(+"");//0
+
+//link to study prifix and profix
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
+
+//  link to study
+//https://tc39.es/ecma262/multipage/abstract-operations.html#sec-abstract-operations
+
