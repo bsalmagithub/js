@@ -45,3 +45,18 @@ console.log(typeof myFunction)// data type is Function it written. but we say Ob
 
 //link for datatypes 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Memories
+//Stack  , Heap memory
+// stack memory used in primitive  (copy we will get )
+// heap memory used in non-primitive ( original we will get)
+
+let myName="salma"
+let anotherName=myName// here we are not giving the original value. we gave copy 
+anotherName="Aizah"
+console.log(myName) //salma
+console.log(anotherName);// Aizah
