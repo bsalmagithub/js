@@ -44,7 +44,7 @@ jsUser.greeting=function(){
 }
 
 jsUser.greetingtwo=function(){
-    console.log(`Hello JS user, ${this.name}`); // same object ku refernce karna hay this // Hello JS user, Salma
+    console.log(`Hello JS user, ${this.name}`); // same object ku refernce karna hay this // Hello JS user, Salma 
 }
 console.log(jsUser.greeting); //[Function (anonymous)]
 console.log(jsUser.greeting());//undefined
