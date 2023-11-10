@@ -74,7 +74,7 @@ const {courseInstructor: instructor} =course
 console.log(instructor); //salma
 
 
-//json api format
+//api  json format
 //in object
 /*{
     'name':'salma',
