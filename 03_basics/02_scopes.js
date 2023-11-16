@@ -1,7 +1,7 @@
-/// scope
+ /// scope
 //scope => has global scope and block scope . global=> outside the scope. block scope=> means {} under the braces
 {} // this is scope if and function we are using scope . but in object this is curly braces are not scope it is object declaertion 
-
+ 
 /*
 let a =10
 const b= 20
@@ -42,7 +42,7 @@ if (true){
         const website=" Google"
         //console.log(username + website);// Salma Google
     }
-    //console.log(website); error
+    //console. log(website); error
 }
 // console.log(username); error
 
