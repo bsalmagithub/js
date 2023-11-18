@@ -1,7 +1,7 @@
 // CONTROL flow or LOGI flow
 //if statement is first control flow
 
-const isUserLoggedIn=true
+//const isUserLoggedIn=true
 const temperature=41
 
 /*if (temperature){  // it is true 
@@ -24,7 +24,34 @@ if (score > 100) {
 */
 
 // shot hand notation
+
 const balance=1000
+
 //this is called implicit scope it assume that there is scope we can't write multiple line some people write they instead of ; they put , basically don't write like this
-//if (balance >500) console.log("test"); //test
+//if (balance >500) console.log("test"); //test  // this is not good practice
+
+if (balance < 500){
+    console.log('less than 500');
+}
+else if (balance < 750){
+    console.log('less than 750');
+}
+else if (balance < 900){
+    console.log('less than 900');
+}
+else{
+    console.log('less than 1200');// less than 1200
+}
+
+const isUserLoggedIn=true
+const debitcard= true
+const loggedInFromGoogle=false
+const loggedInFromGmail=true
+
+if (isUserLoggedIn && debitcard){  //& and 
+    console.log("Allow to buy course"); //Allow to buy course
+}
+if (loggedInFromGoogle || loggedInFromGmail){ // || or 
+    console.log('User logged in');  //User logged in
+}
 
