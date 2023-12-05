@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""  /*onclick="alert('owl')" avoid this not good approch */ ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+<script>
+
+    // in javascript all events run in sequentially 
+
+    // document.getElementById('owl').onclick= function(){
+    //     alert('owl Clicked')   //in this approch also have issue it gives less features 
+    // }
+    
+    // another approch is there 
+    // attachEvent() method it is used in early time when internet explore has demand deficult to cut application that time
+    //jQuery is frame work in that onEvent is there 
+    
+
+    // we should use eventlisnter because it gives onclick functionality and also give propogation ability
+    //best approch 
+    // document.getElementById('owl').addEventListener('click',function(){},/*false*/)   // dafault also a false , this is 3rd parameter , it is default false we don't need to write , in interview some application will give with true or false it won't be complete
+    
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert('owl Clicked again')
+    // }) 
+
+    document.getElementById('owl').addEventListener('click',function(e){    //e  event object. study this
+       console.log(e)
+    }, false)
+    // have read and understand
+    //type (event), timestamp , defaultPrevented 
+    //target, toElement, srcElement, currentTarget, 
+    //clientX, clientY, screenX, screenY postions related 
+    //altkey, ctrlkey shiftkey, keyCode  
+     
+
+    //event propagation is 2 ways one is bubbling up  and capturing mode
+    // bubbling up means it goes down to up 
+
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('Clicked inside the ul')    //Clicked inside the ul . we get this when we click
+    //  },false)
+
+    //  document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('Owl clicked')          //Owl clicked  Clicked inside the ul.  this will get as a output
+        
+    //     e.stopPropagation() // it won't bubble on top element  
+    //  },false)
+
+
+     //capturing mode   it goes top to down
+
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('Clicked inside the ul')    //Clicked inside the ul . we get this when we click
+    //  },true)
+
+    //  document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('Owl clicked')            // Clicked inside the ul  Owl clicked .  this will get as a output
+    //     //e.stopPropagation()       // work in only false 
+    //  },true)
+     
+     //so we have to decide which one we want bubbling or capuring 
+    
+
+    //preventDefault  method
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()          // now we won't go in google website
+    //     e.stopPropagation()         // if don't propagation also we can give this
+    //     console.log('google clicked')
+        
+    // },false)
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target)
+    })
+
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.parentNode)        //<li>..</li>
+    //     let removeIt=e.target.parentNode
+    //     removeIt.remove()                   // remove the li
+
+    //     //removeIt.parentNode.removeChild(removeIt)    //same removes the li.  new method
+    // })
+            //when we click list item the all items are removed 
+
+    //we don't want to remove all    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)        //<li>..</li>
+
+        if (e.target.tagName === "IMG"){
+            console.log(e.target.id)
+            let removeIt=e.target.parentNode
+            removeIt.remove()                   // remove the li
+
+        }
+        
+        //removeIt.parentNode.removeChild(removeIt)    //same removes the li.  new method
+    })
+</script>
+
+</html>
