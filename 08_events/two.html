@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //functions
+    setTimeout(function(){
+        console.log('Salma')        // one time i will print setTimeout means time out here we told that after 2 sec print the console
+    },2000)
+
+    //same above 
+    // const saySalma= function(){
+    //     console.log('salma')
+    // }
+    // setTimeout(saySalma, 2000)   //saySalma is refernce . saySalma() is execution here we use refernce
+
+    //document.querySelector('h1').innerHTML='best Javascript notes'  // we want run this code after two secods
+    const changeText= function(){
+        document.querySelector('h1').innerHTML="best Javascript notes"
+    }
+    const changeMe=setTimeout(changeText,2000)
+
+    //we want to stop setTimeout for that we use clearTimeout() to stop we want refernce 
+    //clearTimeout(changeMe)        we want add event 
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log('Stopped');
+    })
+
+    
+
+
+
+
+</script>
+</html>
