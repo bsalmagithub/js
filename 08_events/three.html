@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript code with me</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setInterval repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.
+    setInterval(function(){
+        //console.log('salma', Date.now())
+    },1000)
+
+    // const sayDate= function(){
+    //     console.log('salma', Date.now());
+    // }
+    // setInterval(sayDate, 2000)   //sayDate is refernce
+
+
+    const sayDate= function(str){
+        //console.log(str, Date.now());
+    }
+    // setInterval(sayDate, 2000, "Hi Aizah") // here we can pass parameters also 
+
+    const intervalId= setInterval(sayDate, 2000, "Hi Aizah") //we want pass id 
+
+
+    //clearInterval()  //method cancels a timed, repeating action which was previously established by a call to setInterval().
+    //clearInterval(intervalId)   // now stopped
+
+    
+    let intervalid;        
+    
+    document.querySelector('#start').addEventListener('click',function(){
+        intervalid=setInterval( function(){
+        console.log('salma', Date.now())
+    },2000)
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalid)
+        console.log('stopped')
+    })
+
+</script>
+</html>
