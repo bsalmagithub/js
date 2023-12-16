@@ -117,7 +117,7 @@ consumePromiseFive()
 // }
 // getAllUsers()
 //now write this in .then() and catch formate 
-fetch('https://jsonplaceholder.typicode.com/use')
+fetch('https://jsonplaceholder.typicode.com/use')   //web request
 .then((response) =>{
     return response.json()
 })
@@ -126,3 +126,6 @@ fetch('https://jsonplaceholder.typicode.com/use')
 })
 .catch( (error) => console.log(error))
 
+
+// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API#specifications
+// https://fetch.spec.whatwg.org/#fetch-method
