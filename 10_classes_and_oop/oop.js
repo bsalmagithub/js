@@ -11,3 +11,5 @@ const user={
 }
 console.log(user.username);
 console.log(user.getUserDetails()); //method should be run () not refernce
+
+
